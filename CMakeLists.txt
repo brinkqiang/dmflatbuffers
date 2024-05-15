@@ -8,6 +8,11 @@ project(FlatBuffers
         VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
         LANGUAGES CXX)
 
+INCLUDE(cmake/ModuleImport.cmake)
+LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+INCLUDE(cmake/ModuleCompileOptions.cmake)
+ModuleSetCompileOptions()
+
 # generate compile_commands.json
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
